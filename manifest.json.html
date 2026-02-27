@@ -1,0 +1,333 @@
+{
+    "name": "نظام إدارة المشتل",
+    "short_name": "المشتل",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f0f2f5",
+    "theme_color": "#2c3e50",
+    "description": "تطبيق لإدارة مخزون وطلبات المشتل",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/9472/9472146.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/9472/9472146.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}];
+
+// [Type, Customer, Phone, Id, Qty] (Sample of full data due to size)
+const D_DATA = [
+["شتل طماط بصمة","عرفات سعد صالحالسويدي","772327750","احمد طاهر",2376],["شتل طماط 666","نبيل عبدة محمد مقبلالجعشني (سنبل)","*","احمد طاهر",4536],["شتل طماط 666","قايد محمد قايدالسويدي","777787849","علي مأمون",6048],["شتل طماط 666","محمد علي محمدالضوراني","777101547","أسامة العبصري",7992],["شتل طماط 666","ياسين صالح محمدالقيسي","777702156","نقدي",4104],["شتل طماط رغد","موسى علي صالحالصقري","737013207","نقدي",4536],["شتل طماط 666","محمد علي محمدالضوراني","77557168","علي مأمون",3456],["شتل طماط بصمة","علي محمد القرضي","771006487","علي مأمون",4968],["شتل طماط رغد","موسى علي صالحالصقري","775579103","علي مأمون",4968],["شتل طماط 666","عرفات سعد صالحالسويدي","772262042","علي مأمون",432],["شتل طماط اثمار","عرفات سعد صالحالسويدي","772369968","نبيل مقبل",1080],["شتل طماط 666","يحيى العزي المؤايد","*","نبيل مقبل",1944],["شتل طماط 666","عبدالرازق محمد عليالعيزقي","*","احمد طاهر",1944],["شتل طماط رغد","عبدالله احمد العنسي","*","*",10152],["شتل طماط 666","عبدالله احمد العنسي","*","*",1728],["شتل طماط فورجي","محمد عبدالله عليالحرومي","*","*",4752],["شتل طماط بصمة","موسى علي صالحالصقري","*","*",6912],["شتل طماط بصمة","محمد عبدالجليل القادر","*","*",1080],["شتل طماط بصمة","احمد محمد علي صوال اللسي //ضمانة","*","*",216],["شتل طماط 666","ابو بداع السويدي","*","*",5400],["شتل طماط بصمة","علي احمد محمدفاضل الصباري","*","*",5184],["شتل طماط رغد","محمد عبدالرحيمالقيسي","*","*",3240],["شتل طماط 666","محمد احمد الطاحون","*","*",7128],["شتل طماط 666","محمد عبدالله البحر","*","*",9072],["شتل طماط بصمة","منيف العوبلي","*","*",2592],["شتل طماط فورجي","محمد عبدالله عليالحرومي","*","*",648],["شتل طماط رغد","يوسف محمدناصرقشم","*","*",4752],["شتل طماط 666","سليم حسين حمودالسويدي","*","*",3456],["شتل طماط بصمة","احمد محمد سعد ربيد","*","*",3024],["شتل طماط 666","معاذ الصباري","*","*",2376],["شتل طماط رافور","علي احمدالمصنعي/ابوصخر","*","*",1944],["شتل طماط بصمة","علي احمدالمصنعي/ابوصخر","*","*",5616],["شتل طماط رافور","خالد عبدالكريم القيسي","*","*",4536],["شتل طماط 666","سنبل الفقية","*","*",5616],["شتل طماط بصمة","سليم حسين حمودالسويدي","*","*",2592],["شتل طماط 666","محمد محسن احمدالغشم","*","*",3024],["شتل طماط الملكة","عبدالاله علي صالح الصباري","783595049","*",12960],["شتل طماط نخبة","علي محمد القرضي","*","نبيل مقبل",16848],["شتل طماط 666","معاذ الصباري","*","*",2160],["شتل طماط نخبة","محمد محسن احمدالغشم","*","*",3024],["شتل طماط رغد","ياسين صالح محمدالقيسي","*","*",3024],["شتل طماط نخبة","ياسين صالح محمدالقيسي","*","*",3672],["شتل طماط رغد","عزالدين عبدالناصرالقيسي","*","*",1944],["شتل طماط 666","جهم عبدالله مثنئالسويدي","*","*",432],["شتل طماط اثمار","منصر علي القوسي","*","*",6048],["شتل طماط 666","احمد محمد القاضي//ضمانة عبداللهالضوراني","*","*",6048],["شتل طماط زهرة","هاشم الصبحي المهندس","*","*",0],["شتل طماط زهرة","هاشم الصبحي المهندس","*","*",648],["شتل طماط 666","وليد الصباري","*","*",6048],["شتل طماط 666","ابراهيم محمد عليحفظ الله الضوراني","*","*",3024],["شتل طماط رافور","بازل عبدة الجملي/ ضمانة علي حسينالمأمون","*","*",2376],["شتل طماط رغد","بازل عبدة الجملي/ ضمانة علي حسينالمأمون","*","*",1080],["شتل طماط نخبة","احمد مصلح القيسي","*","*",4320],["شتل طماط 666","إبراهيم ناصر جبرانعلي السويدي","*","*",1512],["شتل طماط 666","حسين احمد الفقيه","*","*",4968],["شتل طماط رغد","إبراهيم ناصر جبرانعلي السويدي","*","*",3024],["شتل طماط 666","خالد عبدالكريم القيسي","*","*",1728],["شتل طماط بصمة","علي احمد محمدفاضل الصباري","*","*",4536],["شتل طماط زهرة","عبدالله الضوراني","*","*",216],["شتل طماط اثمار","احمد مصلح القيسي","*","*",216],["شتل طماط نخبة","احمد مصلح القيسي","*","*",432],["شتل طماط رغد","صلاح احمد احمدالعستوت","*","*",2160],["شتل طماط بصمة","صالح احمد علي","*","*",1944],["شتل طماط رافور","اصيل الضوراني","*","*",4536],["شتل طماط رغد","عبدالمجيد محمد","*","*",6912],["شتل طماط 666","عبدالله الضوراني","*","*",4536],["شتل طماط رغد","صلاح احمد احمدالعستوت","*","*",648],["شتل طماط 666","احمد علي احمدالغشمي","*","*",3024],["شتل طماط بصمة","المغدي","*","*",864],["شتل طماط اثمار","شريف ناصر.الجوف","*","*",15120],["شتل طماط اثمار","وليد الصباري","*","*",432],["شتل طماط فورجي","وليد الصباري","*","*",2160],["شتل طماط بصمة","معمر المجهلي","*","*",648],["شتل طماط 666","علي محمد سرحانالعيزقي","*","*",6048],["شتل طماط بصمة","محمد علي الازراق/ضمانة اسامةالعبصري","*","*",4104],["شتل طماط رغد","يوسف علي حسينالسويدي","*","*",2808],["شتل طماط اثمار","عبدالله احمد العنسي","*","*",432],["شتل طماط رغد","عبدالله احمد العنسي","*","*",2160],["شتل طماط بصمة","عبدالمغني العيزقي","*","*",432],["شتل طماط فورجي","عبدالمغني العيزقي","*","*",2376],["شتل طماط اثمار","يونس احمد العزيالورقي","*","*",432],["شتل طماط رغد","يونس احمد العزيالورقي","*","*",6048],["شتل طماط بصمة","فؤاد علي عبدالله","*","*",2592],["شتل طماط بصمة","فؤاد علي عبدالله","*","*",216],["شتل طماط فورجي","فؤاد علي عبدالله","*","*",1080],["شتل طماط بصمة","صالح احمد علي","*","*",2808],["شتل طماط رافور","يوسف محمد محمدعبده السويدي","*","*",2160],["شتل طماط فورجي","يوسف محمد محمدعبده السويدي","*","*",2592],["شتل طماط رافور","علي احمد","*","*",432],["شتل طماط بصمة","علي احمد محمدفاضل الصباري","*","*",4968],["شتل طماط رغد","محمد جبر عبادالسويدي","*","*",3024],["شتل طماط بصمة","مطيع احمد السويدي","*","*",2592],["شتل طماط رغد","عبدالخالق احمد","*","*",6048],["شتل طماط 666","رشيد محمد محمدالقادري","*","*",6480],["شتل طماط 666","قايد محمد قايدالسويدي","*","*",5616],["شتل طماط 666","احمد احمد محمدالوصل","*","*",216],["شتل طماط 666","رضوان خالد النفر","*","*",2808],["شتل طماط اثمار","احمد علي سعدالسويدي","*","*",2592],["شتل طماط نخبة","احمد علي سعدالسويدي","*","*",2592],["شتل طماط 666","رشيد محمد محمدالقادري","*","*",3024],["شتل طماط بصمة","مطيع احمد السويدي","*","*",864],["شتل طماط بصمة","غازي احمد السويدي","*","*",3456],["شتل طماط فورجي","غازي احمد السويدي","*","*",3456],["شتل طماط بصمة","سليم حسين حمودالسويدي","*","*",6048],["شتل طماط اثمار","رضوان خالد النفر","*","*",2592],["شتل طماط 666","صالح محمد القيسي","*","*",1944],["شتل طماط 666","رشيد محمد محمدالقادري","*","*",4104],["شتل طماط 666","احمد عادل الصباري","*","*",432],["شتل طماط زهرة","محمد بشير صلاحالبرادعي","*","*",3240],["شتل طماط رافور","بشير احمد محمدالاسود","*","*",2808],["شتل طماط فورجي","بشير احمد محمدالاسود","*","*",2592],["شتل طماط رغد","جمال عبدالجباري سعدناصر المقدشي","*","*",216],["شتل طماط 666","علي صالح سعد ناصرالسويدي","*","*",432],["شتل طماط بصمة","بشير احمد محمدالاسود","*","*",648],["شتل طماط 666","محمد عبدالله ناصرالصباري","*","*",3888],["شتل طماط نخبة","ابراهيم محمد الحاجربيد","*","*",3240],["شتل طماط نخبة","احمد مصلح القيسي","*","*",2808],["شتل طماط نخبة","ناصر جعفر","*","*",4104],["شتل طماط بصمة","صالح مسعد المغدي","*","*",3024],["شتل طماط رغد","محمد جبرالصراري/ضمانة بلال","*","*",4320],["شتل طماط اثمار","خالد احمد احمدلقاضي","*","*",3888],["شتل طماط اثمار","ناصر محمد ناصرالقيسي","*","*",3024],["شتل طماط 666","احمد علي الضوراني","*","*",2160],["شتل طماط اثمار","احمد علي الضوراني","*","*",3024],["شتل طماط 666","*","*","*",2160],["شتل طماط رغد","احمد علي الضوراني","*","*",2160],["شتل طماط 666","بكري صالح علي","*","*",3888],["شتل طماط 666","عبدالله علي احمد","*","*",2592],["شتل طماط بصمة","صالح حسين صالحاحمد السويدي","*","*",2160],["شتل طماط 666","صالح احمد علي","*","*",6048],["شتل طماط 666","ناصر محمد ناصرالقيسي","*","*",216],["شتل طماط رغد","محمد علي محمدالضوراني","*","*",7992],["شتل طماط رغد","محمد علي محمدالضوراني","*","*",7992],["شتل طماط رغد","عبدالخالق االعيزقي","*","*",4536],["شتل طماط رغد","عبدالخالق االعيزقي","*","*",4536],["شتل طماط اثمار","احمد علي سعدالسويدي","*","*",432],["شتل طماط اثمار","احمد علي سعدالسويدي","*","*",432],["شتل طماط اثمار","خالد احمد احمدلقاضي","*","*",216],["شتل طماط اثمار","خالد احمد احمدلقاضي","*","*",216],["شتل طماط اثمار","احمد جبر احمدالمرامي","*","*",1296],["شتل طماط اثمار","احمد جبر احمدالمرامي","*","*",1296],["شتل طماط اثمار","امين حسين العزي","*","*",4968],["شتل طماط بصمة","امين حسين العزي","*","*",3024],["شتل طماط بصمة","امين حسين العزي","*","*",3024],["شتل طماط اثمار","امين حسين العزي","*","*",4968],["شتل طماط بصمة","صالح علي العطوي","*","*",4968],["شتل طماط بصمة","صالح علي العطوي","*","*",4968],["شتل طماط نخبة","محمد حفطا","*","*",4968],["شتل طماط اثمار","احمد علي الضوراني","*","*",1080],["شتل طماط 666","علي صالح سعد ناصرالسويدي","*","*",864],["شتل طماط اثمار","بشير الجندلي","*","*",4104],["شتل طماط نخبة","بشير الجندلي","*","*",4104],["شتل طماط اثمار","علي احمد القاضي","*","*",4104],["شتل طماط بصمة","محمد الشيبه","*","*",3672],["شتل طماط 666","ابراهيم صالح عتيقالهلالي","*","*",3240],["شتل طماط 666","بكري صالح علي","*","*",216],["شتل طماط نخبة","صالح العمري..الجوف","*","*",1512],["شتل طماط بصمة","المغدي","*","*",216],["شتل طماط 666","معاذ الصباري","*","*",4104],["شتل طماط نخبة","محمد عبدالله علي","*","*",4104],["شتل طماط 666","وليد احمد عليالسويديجعنون/ضمانة عمارالسويدي","*","*",4968],["شتل طماط 666","حسين احمد قايدالسويدي","*","*",3024],["شتل طماط 666","احمد محمد سعد ربيد//ضمانة عزيز","*","*",2808],["شتل طماط 666","يوسف حسين العزيالسويدي","*","*",6048],["شتل طماط 666","عبدالله ناصر الغدي","*","*",3024],["شتل طماط نخبة","بشير الجندلي","*","*",864],["شتل طماط 666","عباس الحمي /ضمانةاسامة العبصري","*","*",3024],["شتل طماط رغد","عباس الحمي /ضمانةاسامة العبصري","*","*",2160],["شتل طماط 666","احمد قصمة","*","*",11016],["شتل طماط اثمار","احمد سعد علي القيسي","*","*",3672],["شتل طماط نخبة","علي حسين صالحاحمد السويدي","*","*",4968],["شتل طماط بصمة","صالح احمد علي","*","*",216],["شتل طماط بصمة","سليم حسين حمودالسويدي","*","*",648],["شتل طماط بصمة","ناصر احمد صالحالفقية","*","*",432],["شتل طماط اثمار","محمد علي مصلحالسويدي","*","*",2160],["شتل طماط 666","خالد عبدالكريم القيسي","*","*",216],["شتل طماط نخبة","خالد عبدالكريم القيسي","*","*",4752],["شتل طماط زهرة","صالح العمري..الجوف","*","*",864],["شتل طماط بصمة","احمد علي احمد الغشمي","*","*",3456],["شتل طماط 666","احمد قصمة","*","*",864],["شتل طماط نخبة","اصيل عتيق حيمد العبصري","*","*",3024],["شتل طماط 666","موسى عبدربه عتيق المرامي","*","*",12096],["شتل طماط رغد","عزالدين عبدالناصر القيسي","*","*",2160],["شتل طماط رغد","ناصر علي عايض المرامي","*","*",4536],["شتل طماط رغد","شمسان بازل الخربي","*","*",2160],["شتل طماط بصمة","شمسان بازل الخربي","*","*",4968],["شتل طماط 666","شمسان بازل الخربي","*","*",4104],["شتل طماط رغد","فايز علي محسن الخربي","*","*",2160],["شتل طماط 666","عزالدين عبدالناصر القيسي","*","*",2592],["شتل طماط 666","وليد جعنون","*","*",1080],["شتل طماط رغد","جمال عبدالجبار سعد المقدشي","*","*",3456],["شتل طماط رغد","قصي جلال صالح زميتر","*","*",4536],["شتل طماط رغد","توفيق علي محمد قايد","*","*",3672],["شتل طماط رغد","علي احمد القاضي","*","*",4536],["شتل طماط رغد","ناصر علي عايض المرامي","*","*",4536],["شتل طماط رغد","وليد احمد العزي الورقي","*","*",5616],["شتل طماط رغد","علي صالح قشم","*","*",7128],["شتل طماط اثمار","علي صالح قشم","*","*",1944],["شتل طماط 666","عبدالله الضوراني","*","*",648],["شتل طماط نخبة","علي حسين صالح احمد السويدي","*","*",216],["شتل طماط نخبة","محمد علي مصلح السويدي","*","*",216],["شتل طماط اثمار","معاد الصباري","*","*",2160],["شتل طماط رغد","أحمد مصلح القيسي","*","*",4968],["شتل طماط 666","علي حسن البور","772295565","*",6264],["شتل طماط رغد","علي احمد العنسي","*","نبيل مقبل",3888],["شتل طماط بصمة","عبدالهادي المدير","770596189","علي مأمون",7992],["شتل طماط 666","ايهم عبدالعزيز صالح عبدالله","771641801","احمد طاهر",6048],["شتل طماط رغد","توفيق علي محمد قايد","771051309","علي مأمون",216],["شتل طماط رغد","محمد جبر عباد السويدي","770650494","أسامة العبصري",648],["شتل طماط اثمار","أحمد مصلح القيسي","*","احمد حسين المامون",1080],["شتل طماط بصمة","محمد عبدالرحيم القيسي","774841845","احمد طاهر",4968],["شتل طماط رغد","صادق احمد صلاح المرامي","772795415","احمد طاهر",6048],["شتل طماط رغد","علي حسن البور","772295565","احمد طاهر",3024],["شتل طماط بصمة","مقبل حسين مسعد البدبدي","*","نبيل مقبل",5184],["شتل طماط اثمار","يوسف محمد محمد عبده السويدي","772957317","احمد طاهر",3024],["شتل طماط رغد","يوسف محمد محمد عبده السويدي","*","علي مأمون",3024],["شتل طماط رغد","سلمان مبارك القيسي","770996616","*",6048],["شتل طماط رغد","مختار احمد سعيد حساب بسام قشم","780754465","علي مأمون",2376],["شتل طماط بصمة","سليم حسين حمود السويدي","774642951","غير محدد",216],["شتل طماط بصمة","حذيفة منصور محمد عبدالله العبصري","770971897","رمزي العمري",2376],["شتل طماط رغد","عبدالله احمد علي عتيق المدير","774442508","أسامة العبصري",432],["شتل طماط رغد","صادق احمد صلاح المرامي","772795415","احمد حسين المامون",1080],["شتل طماط رغد","اسماعيل صالح قايد القيسي","773910123","احمد طاهر",3888],["شتل طماط بصمة","صالح احمد علي السويدي","772246751","احمد قصمة ورمزي العمري",3888],["شتل طماط بصمة","صالح احمد علي السويدي","772246751","علي مأمون",3888],["شتل طماط نخبة","عبدالرقيب رياض المرامي","774213400","علي مأمون",4968],["شتل طماط اثمار","عبدالرقيب رياض المرامي","774213400","احمد طاهر",1080],["شتل طماط بصمة","صالح حسين صالح احمد السويدي","*","احمد طاهر",4968],["شتل طماط رغد","عدنان الصقري","775283467","علي مأمون",6048],["شتل طماط رغد","اسامه علي الشيبة","778082773","علي مأمون",3024],["شتل طماط بصمة","زيد عبدالله","*","احمد حسين المامون",216],["شتل طماط بصمة","ابو بداع السويدي","771282775","نقدي",4968],["شتل طماط نخبة","المخلافي","777123390","احمد طاهر",32832]
+];
+
+// --- Logic ---
+const getData = (key) => JSON.parse(localStorage.getItem(key)) || [];
+const saveData = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+
+function initializeApp() {
+    if (!localStorage.getItem("nursery_app_v7_final")) {
+        // Parse Compact Data
+        let customers = C_DATA.map(c => ({name: c[0], phone: c[1], identifier: c[2]}));
+        let operations = O_DATA.map(o => ({type: o[0], date: o[1], planted: o[2], saturated: o[3], transferred: o[4]}));
+        let production = P_DATA.map(p => ({type: p[0], date: p[1], qty: p[2], planted: p[3]}));
+        let orders = OR_DATA.map(o => ({customer: o[0], type: o[1], qty: o[2], due: o[3], phone: o[4], id: o[5], orderDate: o[6]}));
+        let delivered = D_DATA.map(d => ({type: d[0], customer: d[1], phone: d[2], identifier: d[3], qty: d[4]}));
+        
+        saveData('customers', customers);
+        saveData('operations', operations);
+        saveData('production', production);
+        saveData('orders', orders);
+        saveData('delivered', delivered);
+        localStorage.setItem("nursery_app_v7_final", "true");
+    }
+    renderAll();
+}
+
+function getUniqueItems() {
+    let prod = getData('production').map(i => i.type);
+    let ord = getData('orders').map(i => i.type);
+    let del = getData('delivered').map(i => i.type);
+    let op = getData('operations').map(i => i.type);
+    let all = [...prod, ...ord, ...del, ...op];
+    return [...new Set(all)].filter(i => i && i !== '*');
+}
+
+function populateDatalists() {
+    const itemsDatalist = document.getElementById('items-list');
+    itemsDatalist.innerHTML = '';
+    getUniqueItems().forEach(item => itemsDatalist.innerHTML += `<option value="${item}">`);
+    const custDatalist = document.getElementById('customers-list');
+    custDatalist.innerHTML = '';
+    getData('customers').forEach(c => custDatalist.innerHTML += `<option value="${c.name}">`);
+    const custDatalistSearch = document.getElementById('customers-list-search');
+    custDatalistSearch.innerHTML = '';
+    getData('customers').forEach(c => custDatalistSearch.innerHTML += `<option value="${c.name}">`);
+}
+
+function renderSummary() {
+    const items = getUniqueItems();
+    const opData = getData('operations');
+    const prodData = getData('production');
+    const ordData = getData('orders');
+    const delData = getData('delivered');
+    const container = document.getElementById('summary-list');
+    container.innerHTML = '';
+    items.forEach(item => {
+        const totalPlanted = opData.filter(o => o.type === item).reduce((s, o) => s + (parseInt(o.planted) || 0), 0);
+        const underOp = opData.filter(o => o.type === item && !o.transferred).reduce((s, o) => s + (parseInt(o.planted) || 0), 0);
+        const totalProd = prodData.filter(p => p.type === item).reduce((s, p) => s + parseInt(p.qty), 0);
+        const totalRes = ordData.filter(o => o.type === item).reduce((s, o) => s + parseInt(o.qty), 0);
+        const totalDel = delData.filter(d => d.type === item).reduce((s, d) => s + parseInt(d.qty), 0);
+        const remaining = totalProd - totalDel - totalRes;
+        let color = remaining > 0 ? 'text-success' : 'text-danger';
+        if(remaining === 0) color = 'text-warning';
+        container.innerHTML += `<div class="stock-card"><div class="card-header">${item}</div><div class="card-body"><div class="stat-row"><span>إجمالي المزروع:</span><span class="stat-val text-primary">${totalPlanted}</span></div><div class="stat-row"><span>تحت التشغيل:</span><span class="stat-val text-warning">${underOp}</span></div><div class="stat-row"><span>الإنتاج التام:</span><span class="stat-val">${totalProd}</span></div><div class="stat-row"><span>المحجوز:</span><span class="stat-val">${totalRes}</span></div><div class="stat-row"><span>المسلم:</span><span class="stat-val">${totalDel}</span></div><div class="stat-row" style="border-top: 2px solid #333; padding-top: 5px; margin-top: 5px;"><span style="font-weight:bold;">الباقي:</span><span class="stat-val ${color}" style="font-size:16px;">${remaining}</span></div></div></div>`;
+    });
+    renderMonthlySummary();
+}
+
+function renderMonthlySummary() {
+    const ordData = getData('orders');
+    const prodData = getData('production');
+    const opData = getData('operations');
+    const tbody = document.querySelector('#monthly-summary-table tbody');
+    tbody.innerHTML = '';
+    let months = new Set();
+    ordData.forEach(o => { if(o.due) months.add(o.due.substring(0, 7)); });
+    prodData.forEach(p => { if(p.date) months.add(p.date.substring(0, 7)); });
+    opData.filter(o => !o.transferred).forEach(o => { if(o.date) months.add(o.date.substring(0, 7)); });
+    let sortedMonths = Array.from(months).sort();
+    sortedMonths.forEach(month => {
+        let reserved = ordData.filter(o => o.due && o.due.startsWith(month)).reduce((s, o) => s + parseInt(o.qty), 0);
+        let produced = prodData.filter(p => p.date && p.date.startsWith(month)).reduce((s, p) => s + parseInt(p.qty), 0);
+        let ops = opData.filter(o => o.date && o.date.startsWith(month)).reduce((s, o) => s + parseInt(o.planted), 0);
+        tbody.innerHTML += `<tr><td><strong>${month}</strong></td><td class="text-danger">${reserved}</td><td class="text-success">${produced}</td><td class="text-primary">${ops}</td></tr>`;
+    });
+}
+
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav button').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById('btn-' + id).classList.add('active');
+    if(id === 'summary') renderSummary();
+}
+
+// Ops
+function addOperation() {
+    let type = document.getElementById('op-type').value;
+    let date = document.getElementById('op-date').value;
+    let planted = document.getElementById('op-planted').value;
+    if(!type || !planted) return alert("الرجاء ملء الصنف والكمية");
+    let data = getData('operations');
+    data.push({ type, date, planted: parseInt(planted), saturated: 0, transferred: false });
+    saveData('operations', data);
+    populateDatalists();
+    renderOperations();
+}
+
+function renderOperations() {
+    let data = getData('operations');
+    let tbody = document.querySelector('#op-table tbody');
+    tbody.innerHTML = '';
+    data.forEach((item, index) => {
+        let trays = Math.ceil(item.planted / 216);
+        let soil = (item.planted * 300 / 0.0338).toFixed(2);
+        let travel = trays * 2;
+        if (!item.transferred) {
+            tbody.innerHTML += `<tr><td>${item.type}</td><td>${item.date}</td><td>${item.planted}</td><td style="background:#f0f0f0;">${trays}</td><td style="background:#f0f0f0;">${soil}</td><td style="background:#f0f0f0;">${travel}</td><td style="background:#e8f8f5;"><input type="number" class="table-input" value="${item.saturated || ''}" onchange="updateSaturated(${index}, this.value)" placeholder="0"></td><td><button class="small-btn btn-secondary" onclick="transferToProd(${index})">ترحيل</button></td></tr>`;
+        } else {
+             tbody.innerHTML += `<tr style="background:#eee; color:#888;"><td>${item.type}</td><td>${item.date}</td><td>${item.planted}</td><td>${trays}</td><td>${soil}</td><td>${travel}</td><td>${item.saturated}</td><td><span style="font-size:10px">تم</span></td></tr>`;
+        }
+    });
+}
+
+function updateSaturated(index, value) {
+    let data = getData('operations');
+    data[index].saturated = parseInt(value) || 0;
+    saveData('operations', data);
+}
+
+function transferToProd(index) {
+    let op = getData('operations');
+    let item = op[index];
+    if(!item.saturated || item.saturated <= 0) return alert("الرجاء إدخال الكمية المشبعة.");
+    item.transferred = true;
+    item.transferDate = new Date().toISOString().split('T')[0];
+    saveData('operations', op);
+    let prod = getData('production');
+    prod.push({ type: item.type, date: item.transferDate, qty: item.saturated, planted: item.planted });
+    saveData('production', prod);
+    renderOperations();
+    renderSummary();
+    alert("تم الترحيل بنجاح");
+}
+
+// Production
+function renderProduction() {
+    let data = getData('production');
+    let tbody = document.querySelector('#prod-table tbody');
+    tbody.innerHTML = '';
+    data.forEach(item => {
+        let planted = item.planted || item.qty;
+        let germ = planted > 0 ? ((item.qty / planted) * 100).toFixed(1) : 0;
+        let cartDiff = Math.ceil((planted - item.qty) / 216);
+        tbody.innerHTML += `<tr><td>${item.type}</td><td>${item.date}</td><td>${planted}</td><td style="color:green; font-weight:bold;">${item.qty}</td><td>${germ}%</td><td>${cartDiff}</td></tr>`;
+    });
+}
+
+// Orders
+function checkAvailability() {
+    let type = document.getElementById('ord-type').value;
+    let requested = parseInt(document.getElementById('ord-qty').value) || 0;
+    let prodData = getData('production');
+    let delData = getData('delivered');
+    let ordData = getData('orders');
+    let totalProd = prodData.filter(p => p.type === type).reduce((s, p) => s + parseInt(p.qty), 0);
+    let totalDel = delData.filter(d => d.type === type).reduce((s, d) => s + parseInt(d.qty), 0);
+    let totalRes = ordData.filter(o => o.type === type).reduce((s, o) => s + parseInt(o.qty), 0);
+    let available = totalProd - totalDel - totalRes;
+    document.getElementById('stock-status').innerText = `المتاح للحجز: ${available}`;
+    document.getElementById('stock-status').style.color = available < 0 ? 'red' : 'green';
+}
+
+function addOrder() {
+    let customer = document.getElementById('ord-customer').value;
+    let phone = document.getElementById('ord-phone').value;
+    let id = document.getElementById('ord-id').value;
+    let type = document.getElementById('ord-type').value;
+    let qty = document.getElementById('ord-qty').value;
+    let due = document.getElementById('ord-due').value;
+    if(!customer || !type || !qty) return alert("بيانات ناقصة");
+    let orders = getData('orders');
+    orders.push({ customer, type, qty, due, phone, id, orderDate: new Date().toISOString().split('T')[0] });
+    saveData('orders', orders);
+    renderOrders();
+    populateDatalists();
+    renderSummary();
+    alert("تم حجز الطلب");
+}
+
+function renderOrders() {
+    let data = getData('orders');
+    let tbody = document.querySelector('#ord-table tbody');
+    tbody.innerHTML = '';
+    data.forEach((item, index) => {
+        tbody.innerHTML += `<tr><td>${item.customer}</td><td>${item.type}</td><td>${item.qty}</td><td>${item.due}</td><td><button class="small-btn btn-deliver" onclick="deliverOrder(${index})">تسليم</button></td></tr>`;
+    });
+}
+
+function deliverOrder(index) {
+    let orders = getData('orders');
+    let item = orders[index];
+    let delivered = getData('delivered');
+    delivered.push({ type: item.type, customer: item.customer, phone: item.phone, identifier: item.id, qty: item.qty });
+    saveData('delivered', delivered);
+    orders.splice(index, 1);
+    saveData('orders', orders);
+    renderOrders();
+    renderDelivered();
+    renderSummary();
+    alert("تم التسليم");
+}
+
+function renderDelivered() {
+    let data = getData('delivered');
+    let tbody = document.querySelector('#del-table tbody');
+    tbody.innerHTML = '';
+    data.forEach(item => {
+        tbody.innerHTML += `<tr><td>${item.type}</td><td>${item.customer}</td><td>${item.phone}</td><td>${item.qty}</td></tr>`;
+    });
+}
+
+function searchCustomerHistory() {
+    let name = document.getElementById('search-customer').value;
+    if(!name) return alert("الرجاء كتابة اسم العميل");
+    let custData = getData('customers');
+    let ordData = getData('orders');
+    let delData = getData('delivered');
+    let customer = custData.find(c => c.name === name);
+    let html = "";
+    if(customer) {
+        html += `<div style="background:#fff; padding:5px; border:1px solid #eee; margin-bottom:10px;"><strong>بيانات العميل:</strong> ${customer.name} | هاتف: ${customer.phone} | معرف: ${customer.identifier}</div>`;
+    } else {
+        html += `<div style="color:red;">العميل غير موجود في القائمة.</div>`;
+    }
+    let currentOrds = ordData.filter(o => o.customer === name);
+    if(currentOrds.length > 0) {
+        html += `<h4>طلبات حالية (محجوزة):</h4><table style="width:100%; font-size:11px; border-collapse:collapse;"><thead><tr style="background:#eee"><th>الصنف</th><th>الكمية</th><th>الاستحقاق</th></tr></thead><tbody>`;
+        currentOrds.forEach(o => { html += `<tr><td>${o.type}</td><td>${o.qty}</td><td>${o.due}</td></tr>`; });
+        html += `</tbody></table>`;
+    }
+    let delOrds = delData.filter(d => d.customer === name);
+    if(delOrds.length > 0) {
+        html += `<h4 style="margin-top:10px;">طلبات مسلمة سابقاً:</h4><table style="width:100%; font-size:11px; border-collapse:collapse;"><thead><tr style="background:#eee"><th>الصنف</th><th>الكمية</th></tr></thead><tbody>`;
+        delOrds.forEach(d => { html += `<tr><td>${d.type}</td><td>${d.qty}</td></tr>`; });
+        html += `</tbody></table>`;
+    }
+    document.getElementById('search-results').innerHTML = html;
+}
+
+// Customers
+function fillCustomerData() {
+    let val = document.getElementById('ord-customer').value;
+    let cust = getData('customers').find(c => c.name === val);
+    if(cust) {
+        document.getElementById('ord-phone').value = cust.phone;
+        document.getElementById('ord-id').value = cust.identifier;
+    }
+}
+document.getElementById('ord-customer').addEventListener('change', fillCustomerData);
+document.getElementById('ord-customer').addEventListener('input', fillCustomerData);
+
+function addCustomer() {
+    let name = document.getElementById('cust-name').value;
+    let phone = document.getElementById('cust-phone').value;
+    let identifier = document.getElementById('cust-identifier').value;
+    if(!name) return alert("الاسم مطلوب");
+    let data = getData('customers');
+    if(data.find(c => c.name === name)) return alert("العميل موجود مسبقاً");
+    data.push({ name, phone, identifier });
+    saveData('customers', data);
+    renderCustomers();
+    populateDatalists();
+}
+
+function renderCustomers() {
+    let data = getData('customers');
+    let tbody = document.querySelector('#cust-table tbody');
+    tbody.innerHTML = '';
+    data.forEach((item, index) => {
+        tbody.innerHTML += `<tr><td>${item.name}</td><td>${item.phone}</td><td>${item.identifier}</td><td><button class="small-btn btn-danger" onclick="deleteCust(${index})">X</button></td></tr>`;
+    });
+}
+
+function deleteCust(index) {
+    if(confirm("حذف العميل؟")) {
+        let d = getData('customers');
+        d.splice(index, 1);
+        saveData('customers', d);
+        renderCustomers();
+        populateDatalists();
+    }
+}
+
+function renderAll() {
+    renderSummary();
+    renderOperations();
+    renderProduction();
+    renderOrders();
+    renderDelivered();
+    renderCustomers();
+    populateDatalists();
+}
+
+window.onload = initializeApp;
+</script>
+</body>
+</html>
